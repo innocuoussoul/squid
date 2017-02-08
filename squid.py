@@ -48,8 +48,9 @@ class Squid:
     def set_blue(self, brightness):
         self.blue_pwm.ChangeDutyCycle(brightness)
         
-    def set_color(self, (r, g, b), brightness = 100):
-        self.set_red(r * brightness / 100)
+    def set_color(self, color, brightness = 100):
+        (r,g,b) = color
+	self.set_red(r * brightness / 100)
         self.set_green(g * brightness / 100)
         self.set_blue(b * brightness / 100)
         
